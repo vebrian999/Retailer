@@ -5,13 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Retailer_App.Views.Home"
         mc:Ignorable="d"
-        Title="LoginDialog" Height="450" Width="800">
-    <Grid Margin="0,0,-0.4,0">
-        <Button x:Name="BtnLogin" Command="{Binding LoginCommand}" Content="Login" HorizontalAlignment="Left" Margin="171,298,0,0" VerticalAlignment="Top" Width="178" Height="64"/>
-        <Button x:Name="BtnClose" Click="Close_Click" Content="Close" HorizontalAlignment="Left" Margin="485,298,0,0" VerticalAlignment="Top" Width="178" Height="64"/>
-        <TextBox  x:Name ="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}"  Height="43" Margin="293,54,173,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="328"/>
-        <PasswordBox x:Name="TxtPass" PasswordChanged="TxtPass_PasswordChanged" Margin="293,129,173,247"/>
-        <Label Content="User ID" HorizontalAlignment="Left" Margin="143,59,0,0" VerticalAlignment="Top" Width="125" Height="38"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="143,129,0,0" VerticalAlignment="Top" Width="125" Height="38"/>
+        Title="LoginDialog" Height="400" Width="800"
+        Background="#0E2C49">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="BtnLogin" Command="{Binding LoginCommand}" Content="LOGIN"  Style="{StaticResource LoginBtn}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="80" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="5"/>
+        <Button x:Name="BtnClose" Click="Close_Click" Content="CLOSE" Style="{StaticResource LoginBtn}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="80" Grid.Row="5" Grid.Column="4"/>
+        <TextBox x:Name ="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Style="{StaticResource LoginBox}" Background="#24425D" Foreground="White" FontFamily="Quicksand" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Width="360" Height="36" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <PasswordBox x:Name="TxtPass" PasswordChanged="TxtPass_PasswordChanged" Style="{StaticResource PwBox}" Background="#24425D" Foreground="White" Width="360" Height="36" HorizontalAlignment="Right" VerticalContentAlignment="Center" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="3"/>
+        <Label Content="User ID" Style="{StaticResource Content_Label}" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" FontSize="16" Grid.Column="2" Grid.Row="1"/>
+        <Label Content="Password" Style="{StaticResource Content_Label}" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" FontSize="16"  Grid.Column="2" Grid.Row="3"/>
     </Grid>
 </Window>

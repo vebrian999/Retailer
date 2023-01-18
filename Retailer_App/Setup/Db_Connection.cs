@@ -15,7 +15,7 @@ namespace Retailer_App.Setup
         public Db_Connection()
         {
             SqlConnect = new SqlConnection();
-            dbserver = @"CHOP\SQLEXPRESS";
+            dbserver = @"LAPTOP-K7HBHN7J\SQLEXPRESS";
             dbname = "Retailer_DB";
         }
 

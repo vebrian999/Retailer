@@ -5,24 +5,53 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Home"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Height="450" Width="800">
-    <Grid Margin="0,-25,1.6,0" Height="398" VerticalAlignment="Top">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="{DynamicResource backgroundImage}">
+
+    <UserControl.Resources>
+        <ImageSource x:Key="imgSource">pack://application:,,,/Assets/emilia.png</ImageSource>
+        <ImageBrush x:Key="backgroundImage" ImageSource="{DynamicResource imgSource}"></ImageBrush>
+    </UserControl.Resources>
+
+    <Grid  >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="571*" />
-            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="21*" />
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="44"/>
-            <RowDefinition Height="154.4"/>
-            <RowDefinition Height="69*"/>
-            <RowDefinition Height="31*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
-        <DataGrid x:Name="TblData" Grid.Row="1" Margin="9,9,9,9"
+        <!--
+            <Image Source="pack://application:,,,/Assets/Emilia.png" Grid.RowSpan="16" Grid.ColumnSpan="11" Height="Auto" Width="Auto"/>
+        -->
+        <DataGrid x:Name="TblData" Grid.Row="1" Grid.Column="1"
                   HeadersVisibility="Column" EnableRowVirtualization="False"
                   CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
                   AlternatingRowBackground="LightGray" SelectedCellsChanged="TblData_SelectedCellsChanged" 
-                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}">
+                  ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}" Grid.ColumnSpan="7" Grid.RowSpan="5" SelectionChanged="TblData_SelectionChanged"    >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
                 <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
@@ -31,25 +60,25 @@
                 <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="23" Margin="160,13,194,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="23" Margin="160,62,153,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" RenderTransformOrigin="0.384,0.209"/>
-        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="23" Margin="486,61.6,0,0" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Top" Width="66"/>
-        <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Height="23" Margin="136,104.6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="416"/>
-        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" Margin="160,11,48,0" Grid.Row="3" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="7" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
+        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="3"   />
+        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="7"  />
+        <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Height="30" FontSize="15"  Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
+        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" HorizontalAlignment="Center" Grid.Row="13" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="16"  />
 
-        <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,0,0,0" Grid.Row="1" Height="37"/>
-        <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,48,0,0" Grid.Row="1" Height="37"/>
-        <Button  x:Name="BtnUpdate" Content="UPDATE" Command="{Binding UpdateCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,97,0,0" Grid.Row="1" Height="37"/>
+        <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="1" Width="160" Height="50"/>
+        <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9" Grid.Row="3" Height="50" Width="160" />
+        <Button  x:Name="BtnUpdate" Content="UPDATE" Command="{Binding UpdateCommand}" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="9"  Grid.Row="5" Height="50" Width="160"/>
 
-        <Button x:Name="BtnNew" Content="NEW" Click ="BtnNew_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,144,0,0" Grid.Row="1" Height="37" Grid.RowSpan="2"/>
-        <Button x:Name="BtnEdit" Content="EDIT" Click ="BtnEdit_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,54.6,0,0" Grid.Row="2" Height="37"/>
-        <Button x:Name="BtnReset" Content="RESET" Click ="BtnReset_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Grid.Column="1" Margin="22.6,11,0,0" Grid.Row="3" Height="37"/>
-        <Label Content="Name" HorizontalAlignment="Left" Height="25" Margin="80,12.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
-        <Label Content="Username" HorizontalAlignment="Left" Height="25" Margin="81,59.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
-        <Label Content="Password" HorizontalAlignment="Left" Height="25" Margin="81,101.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65"/>
-        <Label Content="Code" HorizontalAlignment="Left" Height="25" Margin="446,60.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="49"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="80,6,0,31" Grid.Row="3" Width="84"/>
-        <Label Content="Active" HorizontalAlignment="Left" Height="25" Margin="179,5,0,0" Grid.Row="3" VerticalAlignment="Top" Width="91"/>
+        <Button x:Name="BtnNew" Content="NEW" Click ="BtnNew_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="7" Height="50"  Width="160" />
+        <Button x:Name="BtnEdit" Content="EDIT" Click ="BtnEdit_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="9" Height="50"/>
+        <Button x:Name="BtnReset" Content="RESET" Click ="BtnReset_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="11" Height="50"/>
+        <Label Content="Name" HorizontalAlignment="Right" Height="28"  Grid.Row="7" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"  />
+        <Label Content="Username" HorizontalAlignment="Right" Height="28" Grid.Row="9" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"/>
+        <Label Content="Password" HorizontalAlignment="Right" Height="28"  Grid.Row="11" Grid.Column="1"  VerticalAlignment="Center" Width="91" FontSize="14"/>
+        <Label Content="Code" HorizontalAlignment="Right" Grid.Row="9" VerticalAlignment="Center" Width="49" Grid.Column="6" FontSize="15" />
+        <Label Content="Status" HorizontalAlignment="Right" Grid.Row="13" VerticalAlignment="Top" Width="91" Grid.Column="1" Grid.RowSpan="2" FontSize="14" />
+        <Label Content="Active" HorizontalAlignment="Left" Grid.Row="13" VerticalAlignment="Top" Width="59" Grid.Column="3" Grid.RowSpan="2" FontSize="14"  />
 
 
     </Grid>

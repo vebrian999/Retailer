@@ -1,4 +1,5 @@
 ﻿using Retailer_App.Models;
+using Retailer_App;
 using Retailer_App.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -94,6 +95,11 @@ namespace Retailer_App.Views.Home
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void TblData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

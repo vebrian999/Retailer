@@ -8,14 +8,14 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow"
-        Title="Retailer App ~[Dashboard]">
+        Title="Dashboard">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="24"/>
+            <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0">
-            <MenuItem Header="_Home">
+        <Menu Grid.Row="0"  VerticalAlignment="Center">
+            <MenuItem Header="_Home" FontFamily="Quicksand" FontSize="14" FontWeight="Bold" Width="60" Height="32">
                 <MenuItem Header="Relogin" x:Name="MnuRelogin" Click="MnuRelogin_Click"/>
                 <Separator/>
                 <MenuItem Header="Task">
@@ -27,7 +27,7 @@
                 <Separator/>
                 <MenuItem Header="Exit" x:Name="MnuExit" Click="MnuExit_Click"/>
             </MenuItem>
-            <MenuItem Header="_Inventories">
+            <MenuItem Header="_Inventories" FontFamily="Quicksand"  FontSize="14" FontWeight="Bold" Width="120">
                 <MenuItem Header="Inventory" x:Name="MnuInventory" Click="MnuInventory_Click"/>
                 <MenuItem Header="Stock" x:Name="MnuStock" Click="MnuStock_Click"/>
                 <Separator/>
