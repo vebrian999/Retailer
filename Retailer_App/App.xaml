@@ -6,13 +6,6 @@
 
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="Button" x:Key="Button_UsersView">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="FontWeight" Value="Bold"/>
-                <Setter Property="FontFamily" Value="Quicksand"/>
-                <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                <Setter Property="Foreground" Value="White" />
-            </Style>
             <Style TargetType="TextBox" x:Key="TxtBox_UsersView">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -32,13 +25,13 @@
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Quicksand"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="#ffffff"/>
             </Style>
             <Style TargetType="TextBox" x:Key="LoginBox">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="White" BorderThickness="1">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="1">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
                         </ControlTemplate>
@@ -49,13 +42,14 @@
                 <Setter Property="FontFamily" Value="Quicksand"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
-                <Setter Property="Background" Value="#C8E0F4"/>
+                <Setter Property="Background" Value="#24425D"/>
+                <Setter Property="Foreground" Value="#aaffffff"/>
             </Style>
             <Style TargetType="PasswordBox" x:Key="PwBox">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type PasswordBox}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="White" BorderThickness="1">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="1">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
                         </ControlTemplate>
@@ -67,11 +61,11 @@
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Quicksand"/>
                 <Setter Property="Background" Value="#508aa8"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="#aaffffff"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="White" BorderThickness="2">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="2">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
@@ -81,6 +75,47 @@
                     <Trigger Property="IsPressed" Value="true">
                         <Setter Property="Background" Value="#2E5264"/>
                     </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button" x:Key="UserBtn">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Quicksand"/>
+                <Setter Property="Background" Value="#508aa8"/>
+                <Setter Property="Foreground" Value="#80ffffff"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="2">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="true">
+                        <Setter Property="Background" Value="#2E5264"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="{x:Type DataGridCell}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                            <Grid Background="{TemplateBinding Background}">
+                                <ContentPresenter />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background" Value="LightGreen"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Content}" Value="Apple">
+                        <Setter Property="Background" Value="Red"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Content}" Value="Tomato">
+                        <Setter Property="Background" Value="Green"/>
+                    </DataTrigger>
                 </Style.Triggers>
             </Style>
         </ResourceDictionary>

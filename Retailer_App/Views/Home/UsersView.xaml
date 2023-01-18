@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Home"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#0E2C49">
 
     <UserControl.Resources>
         <ImageSource x:Key="imgSource">pack://application:,,,/Assets/emilia.png</ImageSource>
@@ -59,25 +60,25 @@
                 <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="7" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
-        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="3"   />
-        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="7"  />
-        <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Height="30" FontSize="15"  Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
+        <TextBox x:Name="TxtName" Text="{Binding Model.Name, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="14" Grid.Row="7" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
+        <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="3"   />
+        <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.Column="7"  />
+        <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="15"  Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
         <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" HorizontalAlignment="Center" Grid.Row="13" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="16"  />
 
-        <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="1" Width="160" Height="50"/>
-        <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9" Grid.Row="3" Height="50" Width="160" />
-        <Button  x:Name="BtnUpdate" Content="UPDATE" Command="{Binding UpdateCommand}" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="9"  Grid.Row="5" Height="50" Width="160"/>
+        <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="1" Width="160" Height="50"/>
+        <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9" Grid.Row="3" Height="50" Width="160" />
+        <Button  x:Name="BtnUpdate" Content="UPDATE" Command="{Binding UpdateCommand}" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="9"  Grid.Row="5" Height="50" Width="160"/>
 
-        <Button x:Name="BtnNew" Content="NEW" Click ="BtnNew_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="7" Height="50"  Width="160" />
-        <Button x:Name="BtnEdit" Content="EDIT" Click ="BtnEdit_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="9" Height="50"/>
-        <Button x:Name="BtnReset" Content="RESET" Click ="BtnReset_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="11" Height="50"/>
-        <Label Content="Name" HorizontalAlignment="Right" Height="28"  Grid.Row="7" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"  />
-        <Label Content="Username" HorizontalAlignment="Right" Height="28" Grid.Row="9" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"/>
-        <Label Content="Password" HorizontalAlignment="Right" Height="28"  Grid.Row="11" Grid.Column="1"  VerticalAlignment="Center" Width="91" FontSize="14"/>
-        <Label Content="Code" HorizontalAlignment="Right" Grid.Row="9" VerticalAlignment="Center" Width="49" Grid.Column="6" FontSize="15" />
-        <Label Content="Status" HorizontalAlignment="Right" Grid.Row="13" VerticalAlignment="Top" Width="91" Grid.Column="1" Grid.RowSpan="2" FontSize="14" />
-        <Label Content="Active" HorizontalAlignment="Left" Grid.Row="13" VerticalAlignment="Top" Width="59" Grid.Column="3" Grid.RowSpan="2" FontSize="14"  />
+        <Button x:Name="BtnNew" Content="NEW" Click ="BtnNew_Click" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="7" Height="50"  Width="160" />
+        <Button x:Name="BtnEdit" Content="EDIT" Click ="BtnEdit_Click" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="9" Height="50"/>
+        <Button x:Name="BtnReset" Content="RESET" Click ="BtnReset_Click" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="160" Grid.Column="9"  Grid.Row="11" Height="50"/>
+        <Label Content="Name" HorizontalAlignment="Right" Height="28" Style="{StaticResource Content_Label}"  Grid.Row="7" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"  />
+        <Label Content="Username" HorizontalAlignment="Right" Height="28" Style="{StaticResource Content_Label}" Grid.Row="9" VerticalAlignment="Center" Width="91"  Grid.Column="1" FontSize="14"/>
+        <Label Content="Password" HorizontalAlignment="Right" Height="28" Style="{StaticResource Content_Label}" Grid.Row="11" Grid.Column="1"  VerticalAlignment="Center" Width="91" FontSize="14"/>
+        <Label Content="Code" HorizontalAlignment="Right" Grid.Row="9" Style="{StaticResource Content_Label}" VerticalAlignment="Center" Width="49" Grid.Column="6" FontSize="15" />
+        <Label Content="Status" HorizontalAlignment="Right" Grid.Row="13" Style="{StaticResource Content_Label}" VerticalAlignment="Top" Width="91" Grid.Column="1" Grid.RowSpan="2" FontSize="14" />
+        <Label Content="Active" HorizontalAlignment="Left" Grid.Row="13" Style="{StaticResource Content_Label}" VerticalAlignment="Top" Width="59" Grid.Column="3" Grid.RowSpan="2" FontSize="14"  />
 
 
     </Grid>

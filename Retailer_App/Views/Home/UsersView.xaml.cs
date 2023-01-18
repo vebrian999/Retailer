@@ -54,7 +54,7 @@ namespace Retailer_App.Views.Home
 
         private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnNew.Visibility = Visibility.Hidden;
+            BtnNew.Visibility = Visibility.Visible;
             BtnEdit.Visibility = Visibility.Visible;
             BtnReset.Visibility = Visibility.Hidden;
         }

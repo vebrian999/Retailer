@@ -101,7 +101,7 @@ namespace Retailer_App.Views.Inventories {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Retailer_App;V1.0.0.0;component/views/inventories/stockdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Retailer_App;component/views/inventories/stockdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Inventories\StockDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

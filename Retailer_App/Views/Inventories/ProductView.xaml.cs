@@ -22,7 +22,7 @@ namespace Retailer_App.Views.Inventories
     /// </summary>
     public partial class ProductView : UserControl
     {
-        public ProductView()
+       /** public ProductView()
         {
             InitializeComponent();
             vm = new ProductViewModel();
@@ -30,7 +30,6 @@ namespace Retailer_App.Views.Inventories
         }
 
         private readonly ProductViewModel vm;
-
-
+       **/
     }
 }
