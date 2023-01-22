@@ -15,7 +15,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0"  VerticalAlignment="Center">
-            <MenuItem Header="_Home" FontFamily="Quicksand" FontSize="14" FontWeight="Bold" Width="60" Height="32">
+            <MenuItem Header="_Home" FontFamily="Quicksand" FontSize="14" Width="60" Height="32">
                 <MenuItem Header="Relogin" x:Name="MnuRelogin" Click="MnuRelogin_Click"/>
                 <Separator/>
                 <MenuItem Header="Task">
@@ -27,13 +27,15 @@
                 <Separator/>
                 <MenuItem Header="Exit" x:Name="MnuExit" Click="MnuExit_Click"/>
             </MenuItem>
-            <MenuItem Header="_Inventories" FontFamily="Quicksand"  FontSize="14" FontWeight="Bold" Width="120">
+            <MenuItem Header="_Inventories" FontFamily="Quicksand"  FontSize="14" Width="120">
                 <MenuItem Header="Inventory" x:Name="MnuInventory" Click="MnuInventory_Click"/>
                 <MenuItem Header="Stock" x:Name="MnuStock" Click="MnuStock_Click"/>
                 <Separator/>
                 <MenuItem Header="Product" x:Name="MnuProduct" Click="MnuProduct_Click"/>
             </MenuItem>
         </Menu>
-        <DockPanel x:Name="PnlContent" Grid.Row="1"/>
+        <DockPanel x:Name="PnlContent" Grid.Row="1">
+            <Image Width="auto"/>
+        </DockPanel>
     </Grid>
 </Window>

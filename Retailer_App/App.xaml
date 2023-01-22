@@ -28,6 +28,14 @@
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="Foreground" Value="#ffffff"/>
             </Style>
+            <Style TargetType="Label" x:Key="Inv_Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Quicksand"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Foreground" Value="#ffffff"/>
+            </Style>
             <Style TargetType="TextBox" x:Key="LoginBox">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -44,13 +52,13 @@
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="Background" Value="#24425D"/>
-                <Setter Property="Foreground" Value="#aaffffff"/>
+                <Setter Property="Foreground" Value="#ffffff"/>
             </Style>
             <Style TargetType="PasswordBox" x:Key="PwBox">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type PasswordBox}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="1">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#ffffff" BorderThickness="1">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
                         </ControlTemplate>
@@ -83,11 +91,11 @@
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Quicksand"/>
                 <Setter Property="Background" Value="#508aa8"/>
-                <Setter Property="Foreground" Value="#80ffffff"/>
+                <Setter Property="Foreground" Value="#ffffff"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderBrush="#aaffffff" BorderThickness="2">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="4" BorderBrush="#ffffff" BorderThickness="1">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>

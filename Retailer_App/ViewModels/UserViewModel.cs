@@ -171,7 +171,6 @@ namespace Retailer_App.ViewModels
                 await ReadDataAsync();
             }
         }
-
         private async Task LoginDataAsync()
         {
             await Task.Delay(0);

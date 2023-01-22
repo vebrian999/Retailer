@@ -8,6 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Views\Inventories\1616072505147.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Folder Include="ViewModels\" />
 	</ItemGroup>
 
@@ -21,5 +25,6 @@
 	
 	<ItemGroup>
 		<Resource Include="Fonts\Geliat-ExtraBold.otf" />
+		<Resource Include="Views\Inventories\1616072505147.png" />
 	</ItemGroup>
 </Project>

@@ -5,72 +5,77 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Inventories"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="Red">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="299*"/>
-            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="2">
+
+        <Image x:Name="BackGround" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="400" Grid.RowSpan="4" VerticalAlignment="Top" Width="800" Source="/Views/Inventories/1616072505147.png"/>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Type" HorizontalAlignment="Left" Style="{StaticResource Inv_Label}" VerticalAlignment="Center" Grid.Column="0"/>
+            <ComboBox x:Name="Typecombo" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Grid.Column="1"/>
+            <Label Content="Show Date" HorizontalAlignment="Center" Style="{StaticResource Inv_Label}" VerticalAlignment="Center" Grid.Column="3"/>
+            <DatePicker x:Name="SelectDate2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+            <DatePicker x:Name="SelectDate1" VerticalAlignment="Center" Grid.Column="6" HorizontalAlignment="Center"/>
+            <Label Content="/" HorizontalAlignment="Center" Style="{StaticResource Inv_Label}" VerticalAlignment="Center" Grid.Column="5" RenderTransformOrigin="-5.396,6.447"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="80*"/>
-                <RowDefinition Height="40*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80*"/>
-                <ColumnDefinition Width="82*"/>
-                <ColumnDefinition Width="45*"/>
-                <ColumnDefinition Width="59*"/>
-                <ColumnDefinition Width="6*"/>
-                <ColumnDefinition Width="133*"/>
-                <ColumnDefinition Width="20*"/>
-                <ColumnDefinition Width="17*"/>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="60*"/>
-                <ColumnDefinition Width="174*"/>
-                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="DATA INVENTORIES" FontSize="18" FontStyle="Normal" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="180" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
-
-
-            <Label Content="Show Date" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="134" Grid.Row="1"  Grid.Column="4"/>
-            <Label Content="" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="133" Grid.Column="8"/>
-
-            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding ShowCommand}" Grid.Column="10" Grid.Row="1"    />
-            <Button x:Name="BtnNew" Content="NEW" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding NewCommand}" Grid.Column="10" Grid.Row="2"       />
-            <Button x:Name="BtnEdit" Content="EDIT" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding EditCommand}" Grid.Column="10" Grid.Row="3"    />
-            <Button x:Name="BtnReset" Content="RESET" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding ResetCommand}" Grid.Column="10" Grid.Row="4" />
-            <Button x:Name="BtnClose" Content="CLOSE" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Center" Width="162" Command="{Binding CloseCommand}" Grid.Column="10" Grid.Row="5" />
-            <ComboBox x:Name="Typecombo" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="3" Height="22"/>
-            <Label Content="Type" HorizontalAlignment="Right" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="50" Height="60" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="5"/>
-            <Label Content="/" HorizontalAlignment="Right" Height="32" VerticalAlignment="Center" Width="16" Grid.Column="7" Grid.ColumnSpan="1" Grid.Row="1"/>
-            <DataGrid x:Name="TblData" Grid.Column="0" Grid.Row="2" HeadersVisibility="Column" EnableRowVirtualization="False"
+            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource UserBtn}" Command="{Binding ShowCommand}" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="BtnNew" Content="NEW" Style="{StaticResource UserBtn}" Command="{Binding NewCommand}" Grid.Row="3" Grid.Column="1"/>
+            <Button x:Name="BtnEdit" Content="EDIT" Style="{StaticResource UserBtn}" Command="{Binding EditCommand}" Grid.Row="5" Grid.Column="1"/>
+            <Button x:Name="BtnReset" Content="RESET" Style="{StaticResource UserBtn}" Command="{Binding ResetCommand}" Grid.Row="7" Grid.Column="1"/>
+            <Button x:Name="BtnClose" Content="CLOSE" Style="{StaticResource UserBtn}" Command="{Binding CloseCommand}" Grid.Row="9" Grid.Column="1"/>
+        </Grid>
+        <DataGrid x:Name="TblData" Grid.Column="1" Grid.Row="2" HeadersVisibility="Column" EnableRowVirtualization="False"
                       CanUserAddRows="False" CanUserDeleteRows="False"
                        AutoGenerateColumns="False" AlternatingRowBackground="LightGray"
-                      HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="597" Grid.ColumnSpan="10" Grid.RowSpan="5">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
-                    <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
-                    <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
-                    <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="*"/>
-                    <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
-                </DataGrid.Columns>
+                      HorizontalAlignment="Left" Height="330" VerticalAlignment="Top">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
+                <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
+                <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="*"/>
+                <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
-
-            </DataGrid>
-            <DatePicker x:Name="SelectDate2" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="50" Width="120"/>
-            <DatePicker x:Name="SelectDate1" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Top" Width="150"/>
-
-        </Grid>
+        <Label Content="DATA INVENTORIES" Style="{StaticResource Inv_Label}" FontSize="20" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="199" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>
