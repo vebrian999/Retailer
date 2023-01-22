@@ -66,7 +66,7 @@
         <TextBox x:Name="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap"  VerticalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="3"   />
         <TextBox x:Name="TxtUid" Text="{Binding Model.Uid, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="14" Grid.Row="9" TextWrapping="Wrap" Width="80" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="7"  />
         <TextBox x:Name="TxtPassword" Text="{Binding Model.Keypass, Mode=TwoWay}" Style="{StaticResource LoginBox}" Height="30" FontSize="15"  Grid.Row="11" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="3"   />
-        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" HorizontalAlignment="Center" Grid.Row="13" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="26" Width="16"  />
+        <CheckBox x:Name="ChkStatus" IsChecked="{Binding IsChecked, Mode=TwoWay}" HorizontalAlignment="Left" Grid.Row="13" Grid.Column="3" Grid.RowSpan="2" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="26" Width="16"  />
 
         <Button x:Name="BtnInsert" Content="INSERT" Command="{Binding InsertCommand}" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9"  Grid.Row="1" Width="160" Height="50"/>
         <Button x:Name="BtnDelete" Content="DELETE" Command="{Binding DeleteCommand}" Style="{StaticResource UserBtn}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="9" Grid.Row="3" Height="50" Width="160" />
@@ -80,7 +80,7 @@
         <Label Content="Password" HorizontalAlignment="Right" Height="28" Style="{StaticResource Content_Label}" Grid.Row="11" Grid.Column="1"  VerticalAlignment="Center" Width="91" FontSize="14"/>
         <Label Content="Code" HorizontalAlignment="Center" Grid.Row="9" Style="{StaticResource Content_Label}" VerticalAlignment="Center" Width="100" Grid.ColumnSpan="2" Grid.Column="6" FontSize="15" />
         <Label Content="Status" HorizontalAlignment="Right" Grid.Row="13" Style="{StaticResource Content_Label}" VerticalAlignment="Top" Width="91" Grid.Column="1" Grid.RowSpan="2" FontSize="14" />
-        <Label Content="Active" HorizontalAlignment="Left" Grid.Row="13" Style="{StaticResource Content_Label}" VerticalAlignment="Top" Width="59" Grid.Column="3" Grid.RowSpan="2" FontSize="14"  />
+        <Label Content="Active" HorizontalAlignment="Center" Grid.Row="13" Style="{StaticResource Content_Label}" VerticalAlignment="Top" Width="59" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="14"  />
 
 
     </Grid>
