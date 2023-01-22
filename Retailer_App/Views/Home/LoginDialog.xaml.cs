@@ -32,7 +32,7 @@ namespace Retailer_App.Views.Home
             vm.Model.Keypass = TxtPass.Password;
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

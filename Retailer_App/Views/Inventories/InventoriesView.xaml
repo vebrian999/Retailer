@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Inventories"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="Red">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -14,14 +15,16 @@
             <ColumnDefinition Width="299*"/>
             <ColumnDefinition Width="101*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="2" Margin="0,0,-2,-2">
+        <Grid Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="112*"/>
-                <RowDefinition Height="81*"/>
-                <RowDefinition Height="75*"/>
-                <RowDefinition Height="75*"/>
-                <RowDefinition Height="68*"/>
-                <RowDefinition Height="41*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="40*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80*"/>
@@ -32,29 +35,29 @@
                 <ColumnDefinition Width="133*"/>
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="17*"/>
-                <ColumnDefinition Width="127*"/>
-                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="60*"/>
                 <ColumnDefinition Width="174*"/>
                 <ColumnDefinition Width="16*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="DATA INVENTORIES" FontSize="20" FontStyle="Normal" HorizontalAlignment="Left" Height="34" Margin="38,10,0,0" VerticalAlignment="Top" Width="199" Grid.ColumnSpan="4"/>
+            <Label Content="DATA INVENTORIES" FontSize="18" FontStyle="Normal" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="180" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
 
 
-            <Label Content="Show Date" HorizontalAlignment="Center" Height="34" Margin="0,46,0,0" VerticalAlignment="Top" Width="134" Grid.Column="4"/>
-            <Label Content="" HorizontalAlignment="Center" Height="34" Margin="0,26,0,0" VerticalAlignment="Top" Width="133" Grid.Column="8"/>
+            <Label Content="Show Date" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="134" Grid.Row="1"  Grid.Column="4"/>
+            <Label Content="" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="133" Grid.Column="8"/>
 
-            <Button x:Name="BtnShow" Content="SHOW" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Height="55" Margin="0,45,0,0" VerticalAlignment="Top" Width="162" Command="{Binding ShowCommand}" Grid.Column="10"     />
-            <Button x:Name="BtnNew" Content="NEW" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Height="55" Margin="0,11,0,0" VerticalAlignment="Top" Width="162" Command="{Binding NewCommand}" Grid.Column="10" Grid.Row="1"       />
-            <Button x:Name="BtnEdit" Content="EDIT" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Height="55" Margin="0,7,0,0" VerticalAlignment="Top" Width="162" Command="{Binding EditCommand}" Grid.Column="10" Grid.Row="2"    />
-            <Button x:Name="BtnReset" Content="RESET" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Height="55" Margin="0,8,0,0" VerticalAlignment="Top" Width="162" Command="{Binding ResetCommand}" Grid.Column="10" Grid.Row="3" />
-            <Button x:Name="BtnClose" Content="CLOSE" FontSize="15" FontStyle="Italic" HorizontalAlignment="Center" Height="55" VerticalAlignment="Center" Width="162" Command="{Binding CloseCommand}" Grid.Column="10" Grid.Row="4" />
-            <ComboBox x:Name="Typecombo" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76" Margin="0,48,0,0" Grid.Column="1" Height="22"/>
-            <Label Content="Type" HorizontalAlignment="Left" Height="34" Margin="25,44,0,0" VerticalAlignment="Top" Width="85" Grid.ColumnSpan="2"/>
-            <Label Content="/" HorizontalAlignment="Left" Height="34" Margin="1,46,0,0" VerticalAlignment="Top" Width="133" Grid.Column="7" Grid.ColumnSpan="2"/>
-            <DataGrid x:Name="TblData" Grid.Column="0" HeadersVisibility="Column" EnableRowVirtualization="False"
+            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding ShowCommand}" Grid.Column="10" Grid.Row="1"    />
+            <Button x:Name="BtnNew" Content="NEW" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding NewCommand}" Grid.Column="10" Grid.Row="2"       />
+            <Button x:Name="BtnEdit" Content="EDIT" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding EditCommand}" Grid.Column="10" Grid.Row="3"    />
+            <Button x:Name="BtnReset" Content="RESET" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Top" Width="162" Command="{Binding ResetCommand}" Grid.Column="10" Grid.Row="4" />
+            <Button x:Name="BtnClose" Content="CLOSE" Style="{StaticResource LoginBtn}" HorizontalAlignment="Center" Height="55" VerticalAlignment="Center" Width="162" Command="{Binding CloseCommand}" Grid.Column="10" Grid.Row="5" />
+            <ComboBox x:Name="Typecombo" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="3" Height="22"/>
+            <Label Content="Type" HorizontalAlignment="Right" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="50" Height="60" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="5"/>
+            <Label Content="/" HorizontalAlignment="Right" Height="32" VerticalAlignment="Center" Width="16" Grid.Column="7" Grid.ColumnSpan="1" Grid.Row="1"/>
+            <DataGrid x:Name="TblData" Grid.Column="0" Grid.Row="2" HeadersVisibility="Column" EnableRowVirtualization="False"
                       CanUserAddRows="False" CanUserDeleteRows="False"
                        AutoGenerateColumns="False" AlternatingRowBackground="LightGray"
-                      HorizontalAlignment="Left" Height="330" Margin="10,75,0,0" VerticalAlignment="Top" Width="597" Grid.ColumnSpan="10" Grid.RowSpan="5">
+                      HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="597" Grid.ColumnSpan="10" Grid.RowSpan="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
                     <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
@@ -65,10 +68,9 @@
 
 
             </DataGrid>
-
+            <DatePicker x:Name="SelectDate2" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="50" Width="120"/>
+            <DatePicker x:Name="SelectDate1" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="4" VerticalContentAlignment="Center" Height="50" VerticalAlignment="Top" Width="150"/>
 
         </Grid>
-        <DatePicker x:Name="SelectDate2" HorizontalAlignment="Left" Margin="455,50,0,0" VerticalAlignment="Top" Width="130"/>
-        <DatePicker x:Name="SelectDate1" HorizontalAlignment="Left" Margin="271,50,0,0" VerticalAlignment="Top" Width="130"/>
     </Grid>
 </UserControl>

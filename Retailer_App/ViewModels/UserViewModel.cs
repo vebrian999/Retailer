@@ -2,12 +2,9 @@
 using Retailer_App.Setup;
 using Retailer_App.Views.Home;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -30,9 +27,9 @@ namespace Retailer_App.ViewModels
         }
 
         public RelayCommand InsertCommand { get; set; }
-        public RelayCommand UpdateCommand { get; set; }
         public RelayCommand DeleteCommand { get; set; }
-        public RelayCommand SelectCommand { get; set; }
+        public RelayCommand UpdateCommand { get; set; }
+        public RelayCommand SelectCommand { get; set; }       
         public RelayCommand LoginCommand { get; set; }
 
         public ObservableCollection<User> Collection
@@ -81,6 +78,7 @@ namespace Retailer_App.ViewModels
             }
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
         public event Action OnCallBack;
 
@@ -126,10 +124,10 @@ namespace Retailer_App.ViewModels
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
                 var query = $"INSERT INTO users VALUES (" +
-                            $"'{model.Name}', " +
-                            $"'{model.UserName}', " +
-                            $"'{model.Keypass}', " +
-                            $"'{state}')";
+                    $"'{model.Name}, " +
+                    $"'{model.UserName}, " +
+                    $"'{model.Keypass}, " +
+                    $"'{state}')";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();
@@ -144,11 +142,11 @@ namespace Retailer_App.ViewModels
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
                 var query = $"UPDATE users SET " +
-                            $"name = '{model.Name}', " +
-                            $"username = '{model.UserName}', " +
-                            $"keypass = '{model.Keypass}', " +
-                            $"status = '{state}' " +
-                            $"WHERE uid = '{model.Uid}'";
+                    $"name = {model.Name}'," +
+                    $"username = {model.UserName}'," +
+                    $"keypass = {model.Keypass}'," +
+                    $"status = '{state}' " +
+                    $"WHERE uid = '{model.Uid}' ";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();
@@ -160,7 +158,7 @@ namespace Retailer_App.ViewModels
         {
             if (IsValidating())
             {
-                var msg = MessageBox.Show("Apakah Kamu Yakin", "Question",
+                var msg = MessageBox.Show("Are you sure?", "Question",
                     MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (msg == MessageBoxResult.Yes)
                 {
@@ -178,12 +176,13 @@ namespace Retailer_App.ViewModels
         {
             await Task.Delay(0);
             dbconn.OpenConnection();
-            // var query = "SELECT * FROM users WHERE username = '" + Model.UserName + "' AND keypass = '" + Model.Keypass + "'";
-            var query = "SELECT * FROM users WHERE username = 'sa' AND keypass = 'adminadmin'";
+            var query = $"SELECT * FROM users " +
+                $"WHERE username = '{Model.UserName}' " +
+                $"AND keypass = '{Model.Keypass}'";
             var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
             var sqlresult = sqlcmd.ExecuteReader();
 
-            if(sqlresult.HasRows)
+            if (sqlresult.HasRows)
             {
                 collection.Clear();
                 while (sqlresult.Read()) {
@@ -193,9 +192,10 @@ namespace Retailer_App.ViewModels
                 App.Dashboard = new Dashboard();
                 App.Dashboard.Show();
                 OnCallBack?.Invoke();
-            } else
+            }
+            else
             {
-                MessageBox.Show("Login Failed please check User or Password", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Credentials Invalid", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
             dbconn.CloseConnection();
         }
@@ -205,23 +205,25 @@ namespace Retailer_App.ViewModels
             var flag = true;
             if (model.Name == null)
             {
-                MessageBox.Show("Teks 1 tidak boleh kosong!!", "Warning",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Exclamation);
+                MessageBox.Show("Text 1 cannot be empty!!!", "Warning",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Exclamation);
                 flag = false;
             }
-            else if (model.UserName == null)
+
+            if (model.UserName == null)
             {
-                MessageBox.Show("Teks 2 tidak boleh kosong!!", "Warning",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Exclamation);
+                MessageBox.Show("Text 2 cannot be empty!!!", "Warning",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Exclamation);
                 flag = false;
             }
-            else if (model.Keypass == null)
+
+            if (model.Keypass == null)
             {
-                MessageBox.Show("Teks 1 tidak boleh kosong!!", "Warning",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Exclamation);
+                MessageBox.Show("Text 3 cannot be empty!!!", "Warning",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Exclamation);
                 flag = false;
             }
             return flag;

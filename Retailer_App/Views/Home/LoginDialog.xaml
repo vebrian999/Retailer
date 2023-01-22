@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Retailer_App.Views.Home"
         mc:Ignorable="d"
         Title="LoginDialog" Height="400" Width="800"
         Background="#0E2C49">
@@ -27,10 +26,10 @@
             <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="BtnLogin" Command="{Binding LoginCommand}" Content="LOGIN"  Style="{StaticResource LoginBtn}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="80" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="5"/>
-        <Button x:Name="BtnClose" Click="Close_Click" Content="CLOSE" Style="{StaticResource LoginBtn}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="80" Grid.Row="5" Grid.Column="4"/>
+        <Button x:Name="BtnClose" Click="BtnClose_Click" Content="CLOSE" Style="{StaticResource LoginBtn}" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" Height="80" Grid.Row="5" Grid.Column="4"/>
         <TextBox x:Name ="TxtUser" Text="{Binding Model.UserName, Mode=TwoWay}" Style="{StaticResource LoginBox}" Background="#24425D" Foreground="White" FontFamily="Quicksand" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Width="360" Height="36" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="3"/>
         <PasswordBox x:Name="TxtPass" PasswordChanged="TxtPass_PasswordChanged" Style="{StaticResource PwBox}" Background="#24425D" Foreground="White" Width="360" Height="36" HorizontalAlignment="Right" VerticalContentAlignment="Center" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="3"/>
-        <Label Content="User ID" Style="{StaticResource Content_Label}" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" FontSize="16" Grid.Column="2" Grid.Row="1"/>
+        <Label Content="Username" Style="{StaticResource Content_Label}" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" FontSize="16" Grid.Column="2" Grid.Row="1"/>
         <Label Content="Password" Style="{StaticResource Content_Label}" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" FontSize="16"  Grid.Column="2" Grid.Row="3"/>
     </Grid>
 </Window>
