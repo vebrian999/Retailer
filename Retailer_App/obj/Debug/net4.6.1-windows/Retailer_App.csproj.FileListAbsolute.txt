@@ -1,0 +1,17 @@
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Retailer_App.csproj.AssemblyReference.cache
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\Dashboard.baml
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\LoginDialog.baml
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\InventoriesViewNew.baml
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\MainWindow.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\Dashboard.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\LoginDialog.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\RulesDialog.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Home\UsersView.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\EditorView.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\InventoriesView.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\InventoriesViewNew.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\ProductView.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Views\Inventories\StockDialog.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\App.g.cs
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Retailer_App_MarkupCompile.cache
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6.1-windows\Retailer_App_MarkupCompile.lref

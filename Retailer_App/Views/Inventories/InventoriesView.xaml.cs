@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Retailer_App.Views.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,24 @@ namespace Retailer_App.Views.Inventories
         public InventoriesView()
         {
             InitializeComponent();
+            dashboard = new Dashboard();    
         }
+
+        private Dashboard dashboard;
 
         private void TblData_SelectedCellsChanged(object sender, RoutedEventArgs e)
         {
         }
 
-        private void BtnMenu_Click(object sender, RoutedEventArgs e)
+        private void ResetComponent()
         {
+            
         }
+
+        private void BtnNew_Click(object sender, RoutedEventArgs e)
+        {
+            ResetComponent();
+        } 
+
     }
 }

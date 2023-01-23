@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Retailer_App.Views.Inventories.InventoriesViewNew"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#0E2C49">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--
+        <Image x:Name="Background" Grid.Row="0" Grid.Column="0" Stretch="UniformToFill" Grid.ColumnSpan="3" Grid.RowSpan="4" Source="/Views/Inventories/BG.png"/>
+        -->
+
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="TblData" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HeadersVisibility="Column" EnableRowVirtualization="False"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                       AutoGenerateColumns="False" AlternatingRowBackground="LightGray"
+                      HorizontalAlignment="Left" Height="150" VerticalAlignment="Top">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
+                    <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
+                    <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="*"/>
+                    <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Label x:Name="Status_Inv" Content="Status" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource Inv_Label}"/>
+            <TextBox VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="100" Height="24" Style="{StaticResource LoginBox}"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="6*"/>
+                <ColumnDefinition Width ="7*"/>
+                <ColumnDefinition Width ="12*"/>
+                <ColumnDefinition Width ="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="DATA INVENTORIES" Style="{StaticResource Inv_Label}" FontSize="20" HorizontalAlignment="Left" Height="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2"/>
+            <Label x:Name="Name_Inv" Content="Name" Style="{StaticResource Inv_Label}" Grid.Row="0" Grid.Column="2" />
+            <TextBox x:Name="Name_Txb" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource LoginBox}" Height="24" Width="250"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="14*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Code" HorizontalAlignment="Left" Style="{StaticResource Inv_Label}" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Label x:Name="Desc_Inv" Content="Description" HorizontalAlignment="Left" Style="{StaticResource Inv_Label}" VerticalAlignment="Center" Grid.Column="4" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="CodeBox_Inv" Style="{StaticResource LoginBox}" Width="70" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <Label Content="Type" Style="{StaticResource Inv_Label}" HorizontalAlignment="Right" HorizontalContentAlignment="Left" Grid.Row="0" VerticalAlignment="Center" Grid.Column="5"/>
+            <Label Content="Current Date" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Inv_Label}"/>
+            <TextBox x:Name="CurDate_Inv" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="100" Style="{StaticResource LoginBox}" VerticalAlignment="Center"/>
+            <TextBox x:Name="DescBox_Inv" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" Width="350" Height="90 " Style="{StaticResource LoginBox}" VerticalAlignment="Center"/>
+            <ComboBox Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="2" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="NonBox_Inv" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450"/>
+            <TextBox Grid.Row="2" Grid.Column="7" Style="{StaticResource LoginBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="24"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="4" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource UserBtn}" Command="{Binding ShowCommand}" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="BtnNew" Content="NEW" Style="{StaticResource UserBtn}" Command="{Binding NewCommand}" Grid.Row="3" Grid.Column="1"/>
+            <Button x:Name="BtnEdit" Content="EDIT" Style="{StaticResource UserBtn}" Command="{Binding EditCommand}" Grid.Row="5" Grid.Column="1"/>
+            <Button x:Name="BtnReset" Content="RESET" Style="{StaticResource UserBtn}" Command="{Binding ResetCommand}" Grid.Row="7" Grid.Column="1"/>
+            <Button x:Name="BtnClose" Content="CLOSE" Style="{StaticResource UserBtn}" Command="{Binding CloseCommand}" Grid.Row="9" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</UserControl>

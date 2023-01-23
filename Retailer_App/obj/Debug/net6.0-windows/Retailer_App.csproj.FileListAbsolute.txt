@@ -169,3 +169,5 @@ C:\Users\kicot\Source\Repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\re
 C:\Users\kicot\Source\Repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\Retailer_App.pdb
 C:\Users\kicot\Source\Repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\Retailer_App.genruntimeconfig.cache
 C:\Users\kicot\Source\Repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\ref\Retailer_App.dll
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\Views\Inventories\InventoriesViewNew.baml
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net6.0-windows\Views\Inventories\InventoriesViewNew.g.cs

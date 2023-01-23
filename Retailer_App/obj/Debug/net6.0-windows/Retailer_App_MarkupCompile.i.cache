@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\App.xaml
-9738872996
+101404814108
 
-24770062505
+2511945016
 195-1953777877
-MainWindow.xaml;Views\Home\Dashboard.xaml;Views\Home\LoginDialog.xaml;Views\Home\RulesDialog.xaml;Views\Home\UsersView.xaml;Views\Inventories\EditorView.xaml;Views\Inventories\InventoriesView.xaml;Views\Inventories\ProductView.xaml;Views\Inventories\StockDialog.xaml;
+MainWindow.xaml;Views\Home\Dashboard.xaml;Views\Home\LoginDialog.xaml;Views\Home\RulesDialog.xaml;Views\Home\UsersView.xaml;Views\Inventories\EditorView.xaml;Views\Inventories\InventoriesView.xaml;Views\Inventories\InventoriesViewNew.xaml;Views\Inventories\ProductView.xaml;Views\Inventories\StockDialog.xaml;
 
-True
+False
 
