@@ -1,6 +1,5 @@
-﻿using System;
-using Retailer_App.Models;
-using Retailer_App.ViewModels;
+﻿using Retailer_App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +21,7 @@ namespace Retailer_App.Views.Inventories
     /// </summary>
     public partial class ProductView : UserControl
     {
-       /** public ProductView()
+        public ProductView()
         {
             InitializeComponent();
             vm = new ProductViewModel();
@@ -30,6 +29,9 @@ namespace Retailer_App.Views.Inventories
         }
 
         private readonly ProductViewModel vm;
-       **/
+
+        private void TblData_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+        }
     }
 }

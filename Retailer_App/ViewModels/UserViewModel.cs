@@ -2,9 +2,12 @@
 using Retailer_App.Setup;
 using Retailer_App.Views.Home;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -27,9 +30,9 @@ namespace Retailer_App.ViewModels
         }
 
         public RelayCommand InsertCommand { get; set; }
-        public RelayCommand DeleteCommand { get; set; }
         public RelayCommand UpdateCommand { get; set; }
-        public RelayCommand SelectCommand { get; set; }       
+        public RelayCommand DeleteCommand { get; set; }
+        public RelayCommand SelectCommand { get; set; }
         public RelayCommand LoginCommand { get; set; }
 
         public ObservableCollection<User> Collection
@@ -78,7 +81,6 @@ namespace Retailer_App.ViewModels
             }
         }
 
-
         public event PropertyChangedEventHandler PropertyChanged;
         public event Action OnCallBack;
 
@@ -124,10 +126,10 @@ namespace Retailer_App.ViewModels
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
                 var query = $"INSERT INTO users VALUES (" +
-                    $"'{model.Name}, " +
-                    $"'{model.UserName}, " +
-                    $"'{model.Keypass}, " +
-                    $"'{state}')";
+                            $"'{model.Name}', " +
+                            $"'{model.UserName}', " +
+                            $"'{model.Keypass}', " +
+                            $"'{state}')";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();
@@ -142,11 +144,11 @@ namespace Retailer_App.ViewModels
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
                 var query = $"UPDATE users SET " +
-                    $"name = {model.Name}'," +
-                    $"username = {model.UserName}'," +
-                    $"keypass = {model.Keypass}'," +
-                    $"status = '{state}' " +
-                    $"WHERE uid = '{model.Uid}' ";
+                            $"name = '{model.Name}', " +
+                            $"username = '{model.UserName}', " +
+                            $"keypass = '{model.Keypass}', " +
+                            $"status = '{state}' " +
+                            $"WHERE uid = '{model.Uid}'";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();
@@ -158,7 +160,7 @@ namespace Retailer_App.ViewModels
         {
             if (IsValidating())
             {
-                var msg = MessageBox.Show("Are you sure?", "Question",
+                var msg = MessageBox.Show("Apakah Kamu Yakin", "Question",
                     MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (msg == MessageBoxResult.Yes)
                 {
@@ -171,6 +173,7 @@ namespace Retailer_App.ViewModels
                 await ReadDataAsync();
             }
         }
+
         private async Task LoginDataAsync()
         {
             await Task.Delay(0);
@@ -184,7 +187,8 @@ namespace Retailer_App.ViewModels
             if (sqlresult.HasRows)
             {
                 collection.Clear();
-                while (sqlresult.Read()) {
+                while (sqlresult.Read())
+                {
                     App.SessionUid = sqlresult[0].ToString();
                     App.SessionUser = sqlresult[1].ToString();
                 }
@@ -204,25 +208,23 @@ namespace Retailer_App.ViewModels
             var flag = true;
             if (model.Name == null)
             {
-                MessageBox.Show("Text 1 cannot be empty!!!", "Warning",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Exclamation);
+                MessageBox.Show("Teks 1 tidak boleh kosong!!", "Warning",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Exclamation);
                 flag = false;
             }
-
-            if (model.UserName == null)
+            else if (model.UserName == null)
             {
-                MessageBox.Show("Text 2 cannot be empty!!!", "Warning",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Exclamation);
+                MessageBox.Show("Teks 2 tidak boleh kosong!!", "Warning",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Exclamation);
                 flag = false;
             }
-
-            if (model.Keypass == null)
+            else if (model.Keypass == null)
             {
-                MessageBox.Show("Text 3 cannot be empty!!!", "Warning",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Exclamation);
+                MessageBox.Show("Teks 1 tidak boleh kosong!!", "Warning",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Exclamation);
                 flag = false;
             }
             return flag;

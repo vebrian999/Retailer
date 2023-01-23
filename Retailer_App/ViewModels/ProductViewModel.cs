@@ -10,7 +10,8 @@ using System.Security.RightsManagement;
 
 namespace Retailer_App.ViewModels
 {
-    public class ProductViewModel : INotifyPropertyChanged {
+    public class ProductViewModel : INotifyPropertyChanged
+    {
         public ProductViewModel()
         {
             collection = new ObservableCollection<Product>();
@@ -88,7 +89,7 @@ namespace Retailer_App.ViewModels
             dbconn.OpenConnection();
 
             await Task.Delay(0);
-            var query = "SELECT * FROM product";
+            var query = "SELECT * FROM products";
             var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
             var sqlresult = sqlcmd.ExecuteReader();
 
@@ -97,7 +98,8 @@ namespace Retailer_App.ViewModels
                 collection.Clear();
                 while (sqlresult.Read())
                 {
-                    collection.Add(new Product {
+                    collection.Add(new Product
+                    {
                         Uid = sqlresult[0].ToString(),
                         Name = sqlresult[1].ToString(),
                         Status = (sqlresult[2].ToString() == "1") ?
@@ -116,8 +118,8 @@ namespace Retailer_App.ViewModels
             {
                 dbconn.OpenConnection();
                 var state = check ? "1" : "0";
-                var query = $"INSERT INTO product VALUES (" +
-                    $"'{model.Name}, " +
+                var query = $"INSERT INTO products VALUES (" +
+                    $"'{model.Name}'," +
                     $"'{state}')";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
@@ -131,11 +133,11 @@ namespace Retailer_App.ViewModels
             if (IsValidating())
             {
                 dbconn.OpenConnection();
-                var state = check ? "1" : "0";
-                var query = $"UPDATE users SET " +
-                    $"name = {model.Name}'," +
-                    $"status = '{state}' " +
-                    $"WHERE uid = '{model.Uid}'";
+                var state = check ? 1 : 0;
+                var query = $"UPDATE products SET " +
+                    $"name = '{model.Name}'," +
+                    $"status = {state}" +
+                    $"WHERE uid = {model.Uid}";
                 var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                 sqlcmd.ExecuteNonQuery();
                 dbconn.CloseConnection();
@@ -152,7 +154,7 @@ namespace Retailer_App.ViewModels
                 if (msg == MessageBoxResult.Yes)
                 {
                     dbconn.OpenConnection();
-                    var query = $"DELETE FROM users WHERE uid = '{model.Uid}'";
+                    var query = $"DELETE FROM products WHERE uid = {model.Uid}";
                     var sqlcmd = new SqlCommand(query, dbconn.SqlConnect);
                     sqlcmd.ExecuteNonQuery();
                     dbconn.CloseConnection();

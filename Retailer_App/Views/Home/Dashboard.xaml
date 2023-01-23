@@ -8,7 +8,9 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow"
-        Title="Dashboard">
+        Title="Dashboard"
+        Background="#0E2C49">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>

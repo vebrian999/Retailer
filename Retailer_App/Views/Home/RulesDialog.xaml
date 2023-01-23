@@ -5,9 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Home"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#0E2C49">
     <Grid>
 
+        <!--
+        <Image x:Name="BackGround" Stretch="UniformToFill" Source="/Views/Inventories/BG.png"/>
+        -->
+        
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="303" Margin="21,82,0,0" VerticalAlignment="Top" Width="512">
 
 

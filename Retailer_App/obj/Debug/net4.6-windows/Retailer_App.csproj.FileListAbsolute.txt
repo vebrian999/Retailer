@@ -1,7 +1,6 @@
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Retailer_App.csproj.AssemblyReference.cache
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Home\Dashboard.baml
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Home\LoginDialog.baml
-C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\InventoriesViewNew.baml
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\MainWindow.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Home\Dashboard.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Home\LoginDialog.g.cs
@@ -9,7 +8,6 @@ C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Vi
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Home\UsersView.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\EditorView.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\InventoriesView.g.cs
-C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\InventoriesViewNew.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\ProductView.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\StockDialog.g.cs
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\App.g.cs
@@ -37,3 +35,5 @@ C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Re
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Retailer_App.exe
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Retailer_App.pdb
 C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Retailer_App.csproj.SuggestedBindingRedirects.cache
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\InventoryLog.baml
+C:\Users\kicot\source\repos\retailerAsu\Retailer_App\obj\Debug\net4.6-windows\Views\Inventories\InventoryLog.g.cs

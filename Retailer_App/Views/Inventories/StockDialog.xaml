@@ -5,29 +5,46 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Inventories"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#0E2C49">
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="14*"/>
-            <RowDefinition Height="48*"/>
-            <RowDefinition Height="26*"/>
-            <RowDefinition Height="17*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="125*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="35*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="46*"/>
-            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="216*"/>
+            <ColumnDefinition Width="84*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="STOCK " FontSize="22" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="40" Width="165"/>
-        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="578"/>
-        <Label Content="Stock" FontSize="15" HorizontalAlignment="Left" Margin="80,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Label Content="Status" FontSize="15" HorizontalAlignment="Left" Margin="92,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Label Content="Active" FontSize="15" HorizontalAlignment="Left" Margin="195,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Label Content="Code" FontSize="15" HorizontalAlignment="Left" Margin="418,52,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtStock" HorizontalAlignment="Left" Height="31" Margin="175,12,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="413"/>
-        <TextBox x:Name="TxtCode" HorizontalAlignment="Left" Height="30" Margin="480,52,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="108"/>
-        <CheckBox x:Name="CheckBox" Content=""   HorizontalAlignment="Left" Margin="180,62,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.783,-0.022"/>
-        <Button x:Name="BtnUpdate" Content="UPDATE" Grid.Column="1" HorizontalAlignment="Center" Height="56" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="176"/>
-        <Button x:Name="BtnClose" Content="CLOSE" Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="9.6,90,0,0" Grid.Row="2" VerticalAlignment="Top" Width="176" Grid.RowSpan="2"/>
+        <Label Content="STOCK " FontSize="22" HorizontalAlignment="Left"  Style="{StaticResource Content_Label}" VerticalAlignment="Center" Height="40" Width="145" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="2"    />
+        <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="187"  Grid.Row="3" VerticalAlignment="Center" Width="578" Grid.RowSpan="2" Grid.ColumnSpan="7" Grid.Column="2" />
+        <Label Content="Stock" FontSize="15" HorizontalAlignment="Center"   Style="{StaticResource Content_Label}" Grid.Row="6" VerticalAlignment="Center" Grid.Column="4" Height="28" Width="50" />
+        <Label Content="Status" FontSize="15" HorizontalAlignment="Center"  Style="{StaticResource Content_Label}"  Grid.Row="7" VerticalAlignment="Center" Grid.Column="4" Height="28" Width="54"/>
+        <Label Content="Active" FontSize="15" HorizontalAlignment="Left"  Style="{StaticResource Content_Label}" Grid.Row="7" VerticalAlignment="Center" HorizontalContentAlignment="Right" Grid.Column="6" Height="28" Width="100"/>
+        <Label Content="Code" FontSize="15" HorizontalAlignment="Left"   Style="{StaticResource Content_Label}"  Grid.Row="7" VerticalAlignment="Center" Grid.Column="7" Height="28" Width="180" Grid.ColumnSpan="2" Margin="14,0,0,0" />
+        <TextBox x:Name="TxtStock" HorizontalAlignment="Left" Height="31" Style="{StaticResource LoginBox}" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="413" Grid.Column="6" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="TxtCode" HorizontalAlignment="Center" Height="30"  Style="{StaticResource LoginBox}" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="108" Grid.Column="8"/>
+        <CheckBox x:Name="CheckBox" Content=""   HorizontalAlignment="Left"  Grid.Row="7" VerticalAlignment="Center" RenderTransformOrigin="0.783,-0.022" Grid.Column="6" Height="15" Width="20"/>
+        <Button x:Name="BtnUpdate" Content="UPDATE"  Style="{StaticResource UserBtn}" Grid.Column="9" HorizontalAlignment="Center" Height="56" Grid.Row="3" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="BtnClose" Content="CLOSE"   Style="{StaticResource UserBtn}" Grid.Column="9" HorizontalAlignment="Center" Height="56" Grid.Row="8" VerticalAlignment="Center" Width="176" />
 
     </Grid>
 </UserControl>

@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Retailer_App.Views.Inventories"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Background="#0E2C49">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*"/>
@@ -19,8 +20,10 @@
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
 
+        <!--
         <Image x:Name="BackGround" Grid.ColumnSpan="3" Stretch="UniformToFill" Grid.RowSpan="4" Source="/Views/Inventories/BG.png"/>
-
+-->
+        
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
@@ -50,27 +53,26 @@
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
-                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="18*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource UserBtn}" Command="{Binding ShowCommand}" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="BtnShow" Content="SHOW" Style="{StaticResource UserBtn}" Command="{Binding SelectCommand}" Grid.Row="1" Grid.Column="1"/>
             <Button x:Name="BtnNew" Content="NEW" Style="{StaticResource UserBtn}" Command="{Binding NewCommand}" Grid.Row="3" Grid.Column="1"/>
             <Button x:Name="BtnEdit" Content="EDIT" Style="{StaticResource UserBtn}" Command="{Binding EditCommand}" Grid.Row="5" Grid.Column="1"/>
             <Button x:Name="BtnReset" Content="RESET" Style="{StaticResource UserBtn}" Command="{Binding ResetCommand}" Grid.Row="7" Grid.Column="1"/>
-            <Button x:Name="BtnClose" Content="CLOSE" Style="{StaticResource UserBtn}" Command="{Binding CloseCommand}" Grid.Row="9" Grid.Column="1"/>
+            <Button x:Name="BtnInsert" Content="INSERT" Style="{StaticResource UserBtn}" Command="{Binding InsertCommand}" Grid.Row="9" Grid.Column="1"/>
         </Grid>
         <DataGrid x:Name="TblData" Grid.Column="1" Grid.Row="2" HeadersVisibility="Column" EnableRowVirtualization="False"
                       CanUserAddRows="False" CanUserDeleteRows="False"
                        AutoGenerateColumns="False" AlternatingRowBackground="LightGray"
-                      HorizontalAlignment="Left" Height="330" VerticalAlignment="Top">
+                      HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" ItemsSource="{Binding Collection}" SelectedItem="{Binding Model}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="CODE" Binding="{Binding Uid}" Width="auto"/>
-                <DataGridTextColumn Header="NAME" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="USER" Binding="{Binding UserName}" Width="*"/>
+                <DataGridTextColumn Header="CODE" Binding="{Binding ser.Uid}" Width="auto"/>
+                <DataGridTextColumn Header="NAME" Binding="{Binding user.Name}" Width="*"/>
+                <DataGridTextColumn Header="USER" Binding="{Binding user.UserName}" Width="*"/>
                 <DataGridTextColumn Header="TYPE" Binding="{Binding Type}" Width="*"/>
                 <DataGridTextColumn Header="STATUS" Binding="{Binding Status}" Width="auto"/>
             </DataGrid.Columns>

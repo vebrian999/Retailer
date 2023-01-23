@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Retailer_App.Views.Inventories
 {
     /// <summary>
-    /// Interaction logic for InventoriesViewNew.xaml
+    /// Interaction logic for InventoryLog.xaml
     /// </summary>
-    public partial class InventoriesViewNew : UserControl
+    public partial class InventoryLog : UserControl
     {
-        public InventoriesViewNew()
+        public InventoryLog()
         {
             InitializeComponent();
         }

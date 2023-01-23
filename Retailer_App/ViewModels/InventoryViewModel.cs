@@ -17,6 +17,7 @@ namespace Retailer_App.ViewModels
             collection = new ObservableCollection<Inventory>();
             dbconn = new Db_Connection();
             model = new Inventory();
+            user = new User(); 
 
             InsertCommand = new RelayCommand(async () => await InsertDataAsync());
             UpdateCommand = new RelayCommand(async () => await UpdateDataAsync());
@@ -103,11 +104,15 @@ namespace Retailer_App.ViewModels
                     {
                         Uid = sqlresult[0].ToString(),
                         Users = {
-                        Name = sqlresult[1].ToString(),
-                        UserName = sqlresult[2].ToString(),
-                        Keypass = sqlresult[3].ToString(),
+                        Uid = sqlresult[1].ToString(),
+                        Name = sqlresult[2].ToString(),
+                        UserName = sqlresult[3].ToString(),
+                        Keypass = sqlresult[4].ToString(),
+                        Status = (sqlresult[5].ToString() == "1") ?
+                        "Active" :
+                        "Not Active",
                         },
-                        LogDate = sqlresult[4].ToString(),
+                        LogDate = sqlresult[6].ToString(),
                         Type = sqlresult[5].ToString(),
                         Description = sqlresult[6].ToString(),
                         Status = (sqlresult[7].ToString() == "1") ?
@@ -130,6 +135,7 @@ namespace Retailer_App.ViewModels
                     $"'{user.Name}, " +
                     $"'{user.UserName}, " +
                     $"'{user.Keypass}, " +
+                    $"'{user.Status}, " +
                     $"'{model.LogDate}, " +
                     $"'{model.Type}, " +
                     $"'{model.Description}, " +
@@ -151,6 +157,7 @@ namespace Retailer_App.ViewModels
                     $"'{user.Name}, " +
                     $"'{user.UserName}, " +
                     $"'{user.Keypass}, " +
+                    $"'{user.Status}, " +
                     $"'{model.LogDate}, " +
                     $"'{model.Type}, " +
                     $"'{model.Description}, " +

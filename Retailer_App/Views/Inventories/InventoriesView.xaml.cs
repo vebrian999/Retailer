@@ -1,4 +1,5 @@
-﻿using Retailer_App.Views.Home;
+﻿using Retailer_App.ViewModels;
+using Retailer_App.Views.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,11 @@ namespace Retailer_App.Views.Inventories
         public InventoriesView()
         {
             InitializeComponent();
-            dashboard = new Dashboard();    
+            vm = new InventoryViewModel();
+            DataContext = vm;
         }
 
-        private Dashboard dashboard;
+        private readonly InventoryViewModel vm;
 
         private void TblData_SelectedCellsChanged(object sender, RoutedEventArgs e)
         {

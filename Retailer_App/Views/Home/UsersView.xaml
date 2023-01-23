@@ -8,13 +8,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#0E2C49">
 
-    <!--
-    <UserControl.Resources>
-        <ImageSource x:Key="imgSource">pack://application:,,,/Assets/emilia.png</ImageSource>
-        <ImageBrush x:Key="backgroundImage" ImageSource="{DynamicResource imgSource}"></ImageBrush>
-    </UserControl.Resources>
-    -->
-
     <Grid  >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" />
