@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Views\Inventories\1616072505147.png" />
+	  <None Remove="Views\Inventories\BG.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -25,6 +25,6 @@
 	
 	<ItemGroup>
 		<Resource Include="Fonts\Geliat-ExtraBold.otf" />
-		<Resource Include="Views\Inventories\1616072505147.png" />
+		<Resource Include="Views\Inventories\BG.png" />
 	</ItemGroup>
 </Project>
