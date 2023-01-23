@@ -36,6 +36,14 @@
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="Foreground" Value="#ffffff"/>
             </Style>
+            <Style TargetType="CheckBox" x:Key="Chk">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Quicksand"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Foreground" Value="#ffffff"/>
+            </Style>
             <Style TargetType="TextBox" x:Key="LoginBox">
                 <Setter Property="Template">
                     <Setter.Value>
